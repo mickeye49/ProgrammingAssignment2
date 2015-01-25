@@ -1,15 +1,22 @@
+##
+## Programming Assignment 2: Lexical Scoping for Johns Hopkins University
+## R Programming course.
+##
+## See the README.md file for the assignment instructions.
+
 ## These functions implement creating, caching, and accessing the
 ## inverse of a matrix. makeCacheMatrix creates a special matrix and
 ## cacheSolve returns the inverse of the matrix.
 
-## makeCacheMatrix returns a list of functions (special matrix) to
-## 1. setmatrix - set the value of the matrix 
-## 2. getmatrix - get the value of the matrix
-## 3. setinverse - set the matrix inverse
-## 4. getinverse - get the matrix inverse
+## makeCacheMatrix returns a special matrix which is actually a
+## list of functions:
+##      1. set - set the value of the matrix 
+##      2. get - get the value of the matrix
+##      3. setinverse - set the matrix inverse
+##      4. getinverse - get the matrix inverse
 ##
 ## The agrument to makeCacheMatrix is optional. You should set the
-## matrix value using the set function if you do not provide 
+## matrix value using the set function if you do not provide an
 ## argument when calling makeCacheMatrix
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -48,10 +55,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve returns the inverse of the matrix. If the inverse
 ## has already been calculated it is returned from cache else it
-## calcultes the index, stores it in cache, and then returns the
+## calculates the index, stores it in cache, and then returns the
 ## inverse.
 ##
-## The argument to ccheSolve is the list (special matrix) returned
+## The argument to cacheSolve is the special matrix returned
 ## from makeCacheMatrix.
 ## The ... argument is passed to the solve function
 
